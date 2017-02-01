@@ -1,0 +1,45 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Juandup.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot est la grille racine où tout le contenu de la page est placé-->
+    <Grid x:Name="LayoutRoot" Background="Coral">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Juandup" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="Client TCP"  Margin="10,0,49,0" Style="{StaticResource PhoneTextGroupHeaderStyle}" Height="45"/>
+        </StackPanel>
+        <ScrollViewer Margin="0,10" Grid.Row="1">
+            <Grid x:Name="ContentPanel" Grid.Row="1" Height="1000" Width="480">
+                <Button Content="Send" HorizontalAlignment="Left" Margin="354,253,0,0" VerticalAlignment="Top" Click="BtnSend" Width="112" Height="75"/>
+                <TextBox x:Name="TextBluet" HorizontalAlignment="Left" Height="278" Margin="10,-10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+                <CheckBox x:Name="CbWifi" HorizontalAlignment="Left" Margin="368,408,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.083,-0.701"/>
+                <TextBox x:Name="TbSend" HorizontalAlignment="Left" Height="77" Margin="10,251,0,0" TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" Width="311"/>
+                <TextBox x:Name="TbHost" HorizontalAlignment="Left" Height="73" Margin="182,332,0,0" TextWrapping="Wrap" Text="192.168.0.20" VerticalAlignment="Top" Width="254"/>
+                <Button Content="Connect" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top" Width="151" Click="Button_Click_1" Height="75"/>
+                <Button Content="Accelero" HorizontalAlignment="Left" Margin="10,631,0,0" VerticalAlignment="Top" Click="AcceleroClick" Width="151"/>
+                <CheckBox x:Name="CbAccelero" Content="Activate accelero event" HorizontalAlignment="Left" Margin="64,703,0,0" Click="CbAccelero_Click" VerticalAlignment="Top"/>
+                <TextBox x:Name="TbWifiName" HorizontalAlignment="Left" Height="73" Margin="182,407,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180"/>
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="WIFI Name" VerticalAlignment="Top" Margin="25,425,0,0" FontSize="26.667" Width="207"/>
+                <Button Content="PopcornTime" HorizontalAlignment="Left" Margin="10,511,0,0" VerticalAlignment="Top" Click="LaunchPT" Width="201"/>
+                <Button Content="Deezer" HorizontalAlignment="Left" Margin="265,511,0,0" VerticalAlignment="Top" Click="LaunchD" Width="201"/>
+            </Grid>
+        </ScrollViewer>
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-36,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+    </Grid>
+</phone:PhoneApplicationPage>
